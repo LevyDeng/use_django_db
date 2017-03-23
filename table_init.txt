@@ -1,0 +1,2 @@
+CREATE TABLE match_info (
+    match_id INT NOT NULL,
