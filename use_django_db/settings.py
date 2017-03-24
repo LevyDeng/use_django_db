@@ -16,17 +16,7 @@ import os
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-
-#DEFAULT_INDEX_TABLESPACE = ''
-
-#LOGGING_CONFIG = None
-
-#LOGGING = False
-
-#FORCE_SCRIPT_NAME = ''
-
-#DEFAULT_TABLESPACE = ''
-
+#LANGUAGE_CODE='zh-Hans'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -60,8 +50,11 @@ DATABASES = {
         'PASSWORD':'123456',
         'HOST':'localhost',
         'PORT':'',
+        #'OPTIONS': {#'charset': 'utf8mb4','init_command':
+        #    "SET sql_mode='STRICT_TRANS_TABLES'"},
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators

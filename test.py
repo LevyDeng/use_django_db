@@ -1,9 +1,23 @@
-import os,django
-from django.conf import  settings
+class a():
+    def __init__(self):
+        print self.__class__
+        self.x=1
+        self.y=2
+        self.c=3
 
-os.environ['DJANGO_SETTINGS_MODULE']="D:\work\Pycharm\use_django_db\use_django_db\settings.py"
-if not settings.configured:
-    settings.configure()
+    #c=3
 
-print os.environ['DJANGO_SETTINGS_MODULE']
-print settings.configured
+
+
+
+
+    #def set(self, key, value):
+      #  setattr(self.__class__,key,value)
+
+aa=a()
+print aa.x,aa.y
+#aa.set('z',4)
+#print aa.z
+setattr(aa,'z',6)
+print aa.z
+print aa.c

@@ -1,0 +1,98 @@
+2017-03-24 06:50:54,318 connectionpool.py[line:264]                      INFO Starting new HTTP connection (1): 300report.jumpw.com
+2017-03-24 06:50:54,392 connectionpool.py[line:395]                      DEBUG Setting read timeout to None
+2017-03-24 06:50:54,460 connectionpool.py[line:435]                      DEBUG "GET /match.html?id=67482286 HTTP/1.1" 200 None
+2017-03-24 06:50:54,513 connectionpool.py[line:264]                      INFO Starting new HTTP connection (1): 300report.jumpw.com
+2017-03-24 06:50:54,535 stats.py[line:84]                      WARNING list index out of range网络连接失败
+2017-03-24 06:50:54,711 connectionpool.py[line:264]                      INFO Starting new HTTP connection (1): 300report.jumpw.com
+2017-03-24 06:50:54,915 connectionpool.py[line:264]                      INFO Starting new HTTP connection (1): 300report.jumpw.com
+2017-03-24 06:50:54,996 connectionpool.py[line:395]                      DEBUG Setting read timeout to None
+2017-03-24 06:50:55,087 connectionpool.py[line:435]                      DEBUG "GET /match.html?id=67482289 HTTP/1.1" 200 None
+2017-03-24 06:50:55,117 connectionpool.py[line:264]                      INFO Starting new HTTP connection (1): 300report.jumpw.com
+2017-03-24 06:50:55,256 stats.py[line:84]                      WARNING list index out of range网络连接失败
+2017-03-24 06:50:55,257 connectionpool.py[line:395]                      DEBUG Setting read timeout to None
+2017-03-24 06:50:55,318 connectionpool.py[line:264]                      INFO Starting new HTTP connection (1): 300report.jumpw.com
+2017-03-24 06:50:55,319 connectionpool.py[line:435]                      DEBUG "GET /match.html?id=67482290 HTTP/1.1" 200 None
+2017-03-24 06:50:55,409 stats.py[line:84]                      WARNING list index out of range网络连接失败
+2017-03-24 06:50:55,520 connectionpool.py[line:264]                      INFO Starting new HTTP connection (1): 300report.jumpw.com
+2017-03-24 06:50:55,596 connectionpool.py[line:395]                      DEBUG Setting read timeout to None
+2017-03-24 06:50:55,664 connectionpool.py[line:435]                      DEBUG "GET /match.html?id=67482292 HTTP/1.1" 200 None
+2017-03-24 06:50:55,722 connectionpool.py[line:264]                      INFO Starting new HTTP connection (1): 300report.jumpw.com
+2017-03-24 06:50:55,747 stats.py[line:84]                      WARNING list index out of range网络连接失败
+2017-03-24 06:50:55,813 connectionpool.py[line:395]                      DEBUG Setting read timeout to None
+2017-03-24 06:50:55,903 connectionpool.py[line:435]                      DEBUG "GET /match.html?id=67482293 HTTP/1.1" 200 None
+2017-03-24 06:50:55,923 connectionpool.py[line:264]                      INFO Starting new HTTP connection (1): 300report.jumpw.com
+2017-03-24 06:50:56,008 stats.py[line:84]                      WARNING list index out of range网络连接失败
+2017-03-24 06:50:56,009 connectionpool.py[line:395]                      DEBUG Setting read timeout to None
+2017-03-24 06:50:56,011 connectionpool.py[line:395]                      DEBUG Setting read timeout to None
+2017-03-24 06:50:56,062 connectionpool.py[line:435]                      DEBUG "GET /match.html?id=67482288 HTTP/1.1" 200 None
+2017-03-24 06:50:56,090 connectionpool.py[line:435]                      DEBUG "GET /match.html?id=67482294 HTTP/1.1" 200 None
+2017-03-24 06:50:56,116 stats.py[line:84]                      WARNING list index out of range网络连接失败
+2017-03-24 06:50:56,124 connectionpool.py[line:264]                      INFO Starting new HTTP connection (1): 300report.jumpw.com
+2017-03-24 06:50:56,185 stats.py[line:84]                      WARNING list index out of range网络连接失败
+2017-03-24 06:50:56,193 connectionpool.py[line:395]                      DEBUG Setting read timeout to None
+2017-03-24 06:50:56,273 connectionpool.py[line:435]                      DEBUG "GET /match.html?id=67482295 HTTP/1.1" 200 None
+2017-03-24 06:50:56,354 stats.py[line:84]                      WARNING list index out of range网络连接失败
+2017-03-24 06:50:56,615 connectionpool.py[line:395]                      DEBUG Setting read timeout to None
+2017-03-24 06:50:56,697 connectionpool.py[line:435]                      DEBUG "GET /match.html?id=67482291 HTTP/1.1" 200 None
+2017-03-24 06:50:56,758 stats.py[line:84]                      WARNING list index out of range网络连接失败
+2017-03-24 06:51:15,529 stats.py[line:84]                      WARNING HTTPConnectionPool(host='300report.jumpw.com', port=80): Max retries exceeded with url: /match.html?id=67482287 (Caused by <class 'socket.error'>: [Errno 111] Connection refused)网络连接失败
+list index out of range网络连接失败
+list index out of range网络连接失败
+list index out of range网络连接失败
+list index out of range网络连接失败
+list index out of range网络连接失败
+list index out of range网络连接失败
+list index out of range网络连接失败
+list index out of range网络连接失败
+list index out of range网络连接失败
+list index out of range网络连接失败
+list index out of range网络连接失败
+list index out of range网络连接失败
+list index out of range网络连接失败
+list index out of range网络连接失败
+list index out of range网络连接失败
+list index out of range网络连接失败
+list index out of range网络连接失败
+list index out of range网络连接失败
+HTTPConnectionPool(host='300report.jumpw.com', port=80): Max retries exceeded with url: /match.html?id=67482288 (Caused by <class 'socket.error'>: [Errno 111] Connection refused)网络连接失败
+HTTPConnectionPool(host='300report.jumpw.com', port=80): Max retries exceeded with url: /match.html?id=67482293 (Caused by <class 'socket.error'>: [Errno 111] Connection refused)网络连接失败
+2017-03-24 07:21:36,065 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:21:36,948 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:21:37,985 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:21:39,006 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:21:39,929 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:21:40,944 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:21:43,991 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:21:44,006 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:21:44,949 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:21:47,970 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:23:21,586 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:23:22,518 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:23:23,611 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:23:24,620 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:23:26,630 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:23:26,833 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:23:27,561 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:23:28,469 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:23:29,522 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:25:50,406 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:25:50,478 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:25:51,432 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:25:52,435 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:25:53,607 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:25:54,483 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:25:55,528 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:25:56,455 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:25:57,523 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:25:58,670 stats.py[line:89]                      WARNING list index out of range网络连接失败
+2017-03-24 07:27:14,838 stats.py[line:89]                      WARNING HTTPConnectionPool(host='300report.jumpw.com', port=80): Max retries exceeded with url: /match.html?id=67482288 (Caused by <class 'socket.error'>: [Errno 111] Connection refused)网络连接失败
+2017-03-24 07:27:15,859 stats.py[line:89]                      WARNING HTTPConnectionPool(host='300report.jumpw.com', port=80): Max retries exceeded with url: /match.html?id=67482289 (Caused by <class 'socket.error'>: [Errno 111] Connection refused)网络连接失败
+2017-03-24 08:01:18,167 stats.py[line:97]                      WARNING HTTPConnectionPool(host='300report.jumpw.com', port=80): Max retries exceeded with url: /match.html?id=67482286 (Caused by <class 'socket.error'>: [Errno 111] Connection refused)网络连接失败
+2017-03-24 08:01:26,946 stats.py[line:97]                      WARNING HTTPConnectionPool(host='300report.jumpw.com', port=80): Max retries exceeded with url: /match.html?id=67482294 (Caused by <class 'socket.error'>: [Errno 111] Connection refused)网络连接失败
+HTTPConnectionPool(host='300report.jumpw.com', port=80): Max retries exceeded with url: /match.html?id=67482292 (Caused by <class 'socket.error'>: [Errno 111] Connection refused)网络连接失败 2017-03-24 08:08:24,138 stats.py[line:105]                      WARNING 
+HTTPConnectionPool(host='300report.jumpw.com', port=80): Max retries exceeded with url: /match.html?id=67482286 (Caused by <class 'socket.error'>: [Errno 111] Connection refused)网络连接失败 2017-03-24 08:30:30,121 stats.py[line:96]                      WARNING 
+HTTPConnectionPool(host='300report.jumpw.com', port=80): Max retries exceeded with url: /match.html?id=67482288 (Caused by <class 'socket.error'>: [Errno 111] Connection refused)网络连接失败 2017-03-24 08:32:38,967 stats.py[line:96]                      WARNING 
+HTTPConnectionPool(host='300report.jumpw.com', port=80): Max retries exceeded with url: /match.html?id=67482286 (Caused by <class 'socket.error'>: [Errno 111] Connection refused)网络连接失败 2017-03-24 08:53:43,899 stats.py[line:106]                      WARNING 
+HTTPConnectionPool(host='300report.jumpw.com', port=80): Max retries exceeded with url: /match.html?id=67482288 (Caused by <class 'socket.error'>: [Errno 111] Connection refused)网络连接失败 2017-03-24 09:21:20,763 stats.py[line:107]                      WARNING 
+HTTPConnectionPool(host='300report.jumpw.com', port=80): Max retries exceeded with url: /match.html?id=67482286 (Caused by <class 'socket.error'>: [Errno 111] Connection refused)网络连接失败 2017-03-24 09:33:56,801 stats.py[line:109]                      WARNING 
+HTTPConnectionPool(host='300report.jumpw.com', port=80): Max retries exceeded with url: /match.html?id=67482287 (Caused by <class 'socket.error'>: [Errno 111] Connection refused)网络连接失败 2017-03-24 09:33:58,696 stats.py[line:109]                      WARNING 
