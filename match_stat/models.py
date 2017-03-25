@@ -5,7 +5,7 @@ from django.db import models
 # Create your models here.
 class MatchInfo(models.Model):
 
-    matchid=models.BigIntegerField(primary_key=True)
+    matchid=models.BigIntegerField(primary_key=True,unique=True)
     info_type=models.CharField(max_length=12,blank=True,null=True)
     info_date=models.DateTimeField(blank=True,null=True)
     info_time=models.TimeField(blank=True,null=True)

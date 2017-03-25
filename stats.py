@@ -75,9 +75,9 @@ class MatchStat():
                         self.writeattr(match_info,'player%s_dies'%str(i),int(kills[1]))
                         self.writeattr(match_info,'player%s_helps'%str(i),int(kills[1]))
                         self.writeattr(match_info,'player%s_wins'%str(i),tds[7].string,'char')
-
                         self.writeattr(match_info,'player%s_soldiers'%str(i),int(tds[11].string))
-                        self.writeattr(match_info,'player%s_golds'%str(i),tds[13].string,'int')
+                        if FLAG==0:
+                            self.writeattr(match_info,'player%s_golds'%str(i),tds[13].string,'int')
                         if tds[17+FLAG].img:
                             self.writeattr(match_info,'player%s_skill1'%str(i),tds[17+FLAG].img['title'],'char')
                             self.writeattr(match_info,'player%s_skill2'%str(i),tds[17+FLAG].img.next_sibling['title'],'char')
@@ -85,11 +85,11 @@ class MatchStat():
                         if len(items)!=0:
                             for j in range(1,len(items)+1):
                                 self.writeattr(match_info,'player%s_item%s'%(str(i),str(j)),items[j-1]['title'],'char')
-
-                        #gain_golds_exps=tds[21].split('/')
-                        #if len(gain_golds_exps) != 0:
-                        #    self.writeattr(match_info,'player%s_gain_golds'%str(i),int(gain_golds_exps[0]))
-                        #    self.writeattr(match_info,'player%s_gain_exp'%str(i),int(gain_golds_exps[1]))
+                        if FLAG==0:
+                            gain_golds_exps=tds[21].split('/')
+                            if len(gain_golds_exps) != 0:
+                                self.writeattr(match_info,'player%s_gain_golds'%str(i),int(gain_golds_exps[0]))
+                                self.writeattr(match_info,'player%s_gain_exp'%str(i),int(gain_golds_exps[1]))
                         if FLAG==0:
                             self.writeattr(match_info,'player%s_jiecao'%str(i),int(tds[23].string))
                             self.writeattr(match_info,'player%s_win_p'%str(i),tds[25].string)
@@ -103,8 +103,8 @@ class MatchStat():
                 loginfo.warning("match:%d 未获取到比赛信息。"%matchid)
 
 
-
         except Exception,e:
+        #except Exception,e:
             logerror.warn(str(e)+"网络连接失败")
 
     def writeattr(self,classname,key,value,type=None):
@@ -118,12 +118,12 @@ class MatchStat():
         except IndexError:
             logerror.warning("/t/tmatchid:%(matchid)d %(key)s net set!")
 
-    def run(self):
+    def run(self,num):
 
-        #for i in range(3):
-        #    t=threading.Thread(target=self.stat_match,args=(STARTID+i,))
-        #    t.start()
-        #    sleep(TIME_SLEEP)
+        for i in range(int(num)):
+            t=threading.Thread(target=self.stat_match,args=(STARTID+i,))
+            t.start()
+            sleep(TIME_SLEEP)
         self.stat_match(STARTID)
 
 
@@ -131,6 +131,6 @@ class MatchStat():
 
 if __name__=='__main__':
     m=MatchStat()
-    m.run()
+    m.run(sys.argv[1])
 
 
