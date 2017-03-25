@@ -120,7 +120,7 @@ class MatchStat():
 
     def run(self,num):
 
-        for i in range(int(num)):
+        for i in range(int(num+1)):
             t=threading.Thread(target=self.stat_match,args=(STARTID+i,))
             t.start()
             sleep(TIME_SLEEP)
