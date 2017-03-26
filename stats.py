@@ -13,12 +13,13 @@ import requests,re
 from bs4 import BeautifulSoup
 from match_stat.models import MatchInfo
 import threading
-from django.db import connections
+from django.db import connections,close_old_connections
 from time import sleep
 import logging
 logformat=logging.Formatter("%(message)s %(asctime)s %(filename)s[line:%(lineno)d] \
                      %(levelname)s ")
 loginfo=logging.getLogger('info')
+loginfo.setLevel(logging.INFO)
 logerror=logging.getLogger('error')
 finfo=logging.FileHandler('info.log')
 ferror=logging.FileHandler('error.log')
@@ -100,12 +101,14 @@ class MatchStat():
                                 continue
                             self.writeattr(match_info,'player%s_jiecao'%str(i),int(tds[23].string))
                             self.writeattr(match_info,'player%s_win_p'%str(i),tds[25].string)
-                        try:
-                            match_info.save()
-                            loginfo.info("成功存储比赛信息，matchid:%d"%matchid)
-                            #connection.close()
-                        except IOError,e:
-                            logerror.error("\t\t"+str(e)+"存储详细信息失败,"+"matchid:%d"%matchid)
+                    try:
+                        close_old_connections()
+                        match_info.save()
+                        loginfo.info("成功存储比赛信息，matchid:%d"%matchid)
+                        print "matchid:%d saved"%matchid
+                        #connection.close()
+                    except IOError,e:
+                        logerror.error("\t\t"+str(e)+"存储详细信息失败,"+"matchid:%d"%matchid)
             else:
                 loginfo.warning("match:%d 未获取到比赛信息。"%matchid)
         except IOError,e:
@@ -121,10 +124,10 @@ class MatchStat():
 
     def run(self,start,end):
         for i in range(int(start),int(end)):
-            #t=threading.Thread(target=self.stat_match,args=(STARTID+i,))
-            #t.start()
-            connections.close_all()
-            self.stat_match(STARTID+i)
+            t=threading.Thread(target=self.stat_match,args=(STARTID+i,))
+            t.start()
+            #connections.close_all()
+            #self.stat_match(STARTID+i)
             sleep(TIME_SLEEP)
 
 
