@@ -104,7 +104,7 @@ class MatchStat():
                     try:
                         close_old_connections()
                         match_info.save()
-                        loginfo.info("成功存储比赛信息，matchid:%d"%matchid)
+                        loginfo.info("成功存储比赛信息，id:%d"%(matchid-STARTID))
                         print "matchid:%d saved"%matchid
                         #connection.close()
                     except IOError,e:
