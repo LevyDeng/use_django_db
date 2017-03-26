@@ -111,7 +111,7 @@ class MatchStat():
                         logerror.error("\t\t"+str(e)+"存储数据失败,"+"matchid:%d"%matchid)
             else:
                 loginfo.warning("match:%d 未获取到比赛信息。"%matchid)
-        except IOError,e:
+        except Exception,e:
         #except Exception,e:
             logerror.warn(str(e)+"网络连接失败")
 
