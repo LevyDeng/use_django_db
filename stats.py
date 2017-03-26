@@ -107,8 +107,8 @@ class MatchStat():
                         loginfo.info("成功存储比赛信息，id:%d"%(matchid-STARTID))
                         print "matchid:%d saved"%matchid
                         #connection.close()
-                    except IOError,e:
-                        logerror.error("\t\t"+str(e)+"存储详细信息失败,"+"matchid:%d"%matchid)
+                    except Exception,e:
+                        logerror.error("\t\t"+str(e)+"存储数据失败,"+"matchid:%d"%matchid)
             else:
                 loginfo.warning("match:%d 未获取到比赛信息。"%matchid)
         except IOError,e:
