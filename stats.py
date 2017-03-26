@@ -13,7 +13,7 @@ import requests,re
 from bs4 import BeautifulSoup
 from match_stat.models import MatchInfo
 import threading
-from django.db import connection
+from django.db import connections
 from time import sleep
 import logging
 logformat=logging.Formatter("%(message)s %(asctime)s %(filename)s[line:%(lineno)d] \
@@ -29,7 +29,7 @@ logerror.addHandler(ferror)
 
 BASE_URL="http://300report.jumpw.com/"
 STARTID=67482286
-TIME_SLEEP=2
+TIME_SLEEP=1
 FLAG=0
 
 class MatchStat():
@@ -44,12 +44,12 @@ class MatchStat():
                     datamsg=soup.find_all('span')[1].next_element.next_element.split()
                     match_info=MatchInfo(matchid=matchid)
                     match_info.info_type=datamsg[0].split(':')[1]
-                    print match_info.info_type
+                    #print match_info.info_type
                     if match_info.info_type=='战场':        #战场，竞技场数据格式不同，偏移量为4
                         FLAG=-2
                     else:
                         FLAG=2
-                    print FLAG
+                    #print FLAG
                     match_info.info_date=datamsg[2].split(':')[1]
                     match_info.info_time=datamsg[3]
                     playtime=datamsg[4].split(":")[1]
@@ -83,12 +83,12 @@ class MatchStat():
                         self.writeattr(match_info,'player%s_soldiers'%str(i),int(tds[11].string))
                         self.writeattr(match_info,'player%s_skill1'%str(i),tds[15+FLAG].img['title'])
                         self.writeattr(match_info,'player%s_skill2'%str(i),tds[15+FLAG].img.next_sibling['title'])
-                        print tds[15+FLAG].img['title']
+                        #print tds[15+FLAG].img['title']
                         items=tds[17+FLAG].find_all('img')
                         if len(items)!=0:
                             for j in range(1,len(items)+1):
                                 self.writeattr(match_info,'player%s_item%s'%(str(i),str(j)),items[j-1]['title'])
-                                print items[j-1]['title']
+                                #print items[j-1]['title']
                         if FLAG==2:
                             self.writeattr(match_info,'player%s_golds'%str(i),tds[13].string)
                             try:
@@ -108,8 +108,6 @@ class MatchStat():
                             logerror.error("\t\t"+str(e)+"存储详细信息失败,"+"matchid:%d"%matchid)
             else:
                 loginfo.warning("match:%d 未获取到比赛信息。"%matchid)
-
-
         except IOError,e:
         #except Exception,e:
             logerror.warn(str(e)+"网络连接失败")
@@ -121,19 +119,19 @@ class MatchStat():
         except IndexError:
             logerror.warning("/t/tmatchid:%(matchid)d %(key)s net set!")
 
-    def run(self,num):
-
-        for i in range(int(num)):
-            t=threading.Thread(target=self.stat_match,args=(STARTID+i,))
-            t.start()
+    def run(self,start,end):
+        for i in range(int(start),int(end)):
+            #t=threading.Thread(target=self.stat_match,args=(STARTID+i,))
+            #t.start()
+            connections.close_all()
+            self.stat_match(STARTID+i)
             sleep(TIME_SLEEP)
-        self.stat_match(STARTID)
 
 
 
 
 if __name__=='__main__':
     m=MatchStat()
-    m.run(sys.argv[1])
+    m.run(sys.argv[1],sys.argv[2])
 
 
