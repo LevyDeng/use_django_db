@@ -137,7 +137,7 @@ if __name__=='__main__':
     m=MatchStat()
     try:
         TIME_SLEEP=sys.argv[3]
-    except IndexError:
+    except:
         pass
     m.run(sys.argv[1],sys.argv[2])
 
