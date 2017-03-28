@@ -11,7 +11,7 @@ django.setup()
 
 import requests,re
 from bs4 import BeautifulSoup
-from match_stat.models import MatchInfo2 as MatchInfo
+from match_stat.models import MatchInfo3 as MatchInfo
 import threading
 from django.db import connections,close_old_connections
 from time import sleep
