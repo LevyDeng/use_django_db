@@ -11,8 +11,8 @@ except:
 match_list=[]
 for l in f.readlines():
     r=re.findall("matchid:(\d+)",l)
-    if r!='':
-        match_list.append(int(r.strip()))
+    if len(r)!=0:
+        match_list.append(int(r))
 f.close()
 
 ms=MatchStat()
