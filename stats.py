@@ -11,7 +11,7 @@ django.setup()
 
 import requests,re
 from bs4 import BeautifulSoup
-from match_stat.models import MatchInfo3 as MatchInfo
+from match_stat.models import MatchInfo4 as MatchInfo
 import threading
 from django.db import connections,close_old_connections
 from time import sleep
@@ -123,13 +123,17 @@ class MatchStat():
             logerror.warning("/t/tmatchid:%(matchid)d %(key)s net set!")
 
     def run(self,start,end):
+        threads=[]
         for i in range(int(start),int(end)):
             t=threading.Thread(target=self.stat_match,args=(STARTID+i,))
+            threads.append(t)
             t.start()
             #connections.close_all()
             #self.stat_match(STARTID+i)
             sleep(TIME_SLEEP)
-
+        for t in threads:
+            t.join()
+        #sys.exit()
 
 
 
