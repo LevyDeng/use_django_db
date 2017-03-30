@@ -12,7 +12,7 @@ match_list=[]
 for l in f.readlines():
     r=re.findall("matchid:(\d+)",l)
     if len(r)!=0:
-        match_list.append(int(r))
+        match_list.append(int(r[0]))
 f.close()
 
 ms=MatchStat()
