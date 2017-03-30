@@ -10,9 +10,10 @@ except:
 
 match_list=[]
 for l in f.readlines():
-    r=re.findall("matchid:(\d+)",l)[0]
+    r=re.findall("matchid:(\d+)",l)
     if r!='':
         match_list.append(int(r.strip()))
+f.close()
 
 ms=MatchStat()
 threads=[]
